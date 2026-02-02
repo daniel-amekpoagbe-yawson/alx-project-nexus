@@ -26,7 +26,7 @@ export const Pagination: React.FC<PaginationProps> = ({
   const canGoNext = currentPage < totalPages && hasNextPage;
 
   return (
-    <div className="flex items-center justify-between py-6 px-4 bg-white rounded-lg border border-gray-200 mt-6">
+    <div className="flex flex-col sm:flex-row items-center justify-between gap-4 py-4 sm:py-6 px-4 bg-white rounded-lg border border-gray-200 mt-6">
       <div className="text-sm text-gray-600">
         Showing <span className="font-semibold">{startItem}</span> to <span className="font-semibold">{endItem}</span> of{' '}
         <span className="font-semibold">{totalItems}</span> flights
