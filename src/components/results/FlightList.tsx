@@ -1,4 +1,5 @@
 import React from 'react';
+import { Plane } from 'lucide-react';
 import { FlightCard } from './FlightCard';
 import { SkeletonFlightCard } from '../ui/Skeleton';
 import type { ProcessedFlight } from '../../types/flight';
@@ -34,7 +35,7 @@ export const FlightList: React.FC<FlightListProps> = ({
   if (flights.length === 0) {
     return (
       <div className="text-center py-12">
-        <div className="text-gray-400 text-6xl mb-4">✈️</div>
+        <div className="text-gray-400 text-6xl mb-4"><Plane className="w-16 h-16 mx-auto" /></div>
         <h3 className="text-lg font-semibold text-gray-700 mb-2">No flights found</h3>
         <p className="text-gray-500">Try adjusting your filters or search criteria</p>
       </div>

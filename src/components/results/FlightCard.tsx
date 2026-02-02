@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Star, Check } from 'lucide-react';
 import { Card } from '../../components/ui/Card';
 import { Button } from '../../components/ui/Button';
 import BookingModal from './BookingModal';
@@ -51,8 +52,8 @@ export const FlightCard: React.FC<FlightCardProps> = ({ flight, dictionaries, is
     <Card hover className="mb-5 relative overflow-hidden">
       {/* Best Deal Badge */}
       {isBestDeal && (
-        <div className="absolute top-0 right-0 bg-gradient-to-br from-amber-400 to-amber-500 text-black px-2 py-1.5 rounded-bl-xl font-mono text-xs shadow-lg">
-          ⭐ Best Deal
+        <div className="absolute top-0 right-0 bg-gradient-to-br from-amber-400 to-amber-500 text-black px-2 py-1.5 rounded-bl-xl font-mono text-xs shadow-lg flex items-center gap-1">
+          <Star className="w-3 h-3 fill-current" /> Best Deal
         </div>
       )}
 
@@ -67,12 +68,12 @@ export const FlightCard: React.FC<FlightCardProps> = ({ flight, dictionaries, is
               </span>
             </div>
             <span className="text-sm font-semibold text-gray-900">{airlineName}</span>
-            <span className={`ml-auto text-xs font-semibold px-3 py-1 rounded-full ${
+            <span className={`ml-auto text-xs font-semibold px-3 py-1 rounded-full flex items-center gap-1 ${
               flight.totalStops === 0 
                 ? 'bg-green-100 text-green-800' 
                 : 'bg-gray-100 text-gray-800'
             }`}>
-              {flight.totalStops === 0 ? '✓ Non-stop' : `${flight.totalStops} stop${flight.totalStops > 1 ? 's' : ''}`}
+              {flight.totalStops === 0 ? <><Check className="w-3 h-3" /> Non-stop</> : `${flight.totalStops} stop${flight.totalStops > 1 ? 's' : ''}`}
             </span>
           </div>
 
