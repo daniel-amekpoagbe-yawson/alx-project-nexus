@@ -1,5 +1,6 @@
 import { createFileRoute, useNavigate } from '@tanstack/react-router';
 import { useState, useEffect } from 'react';
+import { XCircle } from 'lucide-react';
 import type { SearchParams } from '../types/flight';
 import { useFlightFilters, useFlightSearch, useFlightSort, usePriceTrend } from '../hooks/useFlights';
 import { SearchForm } from '../components/search/SearchForm';
@@ -75,7 +76,9 @@ function FlightSearchPage() {
           {/* Error State */}
           {error && (
             <div className="bg-red-50 border border-red-100 rounded-xl p-6">
-              <p className="text-sm font-semibold text-red-900">✕ Error</p>
+              <p className="text-sm font-semibold text-red-900 flex items-center gap-2">
+                <XCircle className="w-4 h-4" /> Error
+              </p>
               <p className="text-red-800 font-medium mt-2">{error.message}</p>
             </div>
           )}
