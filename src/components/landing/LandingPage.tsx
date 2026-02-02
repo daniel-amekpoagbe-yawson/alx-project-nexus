@@ -7,9 +7,15 @@ import { DemoSection } from './DemoSection';
 import { CTASection } from './CTASection';
 import { Footer } from './Footer';
 
+import { useNavigate } from '@tanstack/react-router';
+
+// ... imports
+
 function LandingPage() {
+  const navigate = useNavigate();
+  
   const handleGetStarted = () => {
-    window.location.href = '/';
+    navigate({ to: '/search' });
   };
 
   const scrollToSection = (sectionId: string) => {
