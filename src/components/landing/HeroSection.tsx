@@ -1,4 +1,5 @@
 import { Button } from '../ui/Button';
+import { Zap, SlidersHorizontal, BarChart3, ArrowRight } from 'lucide-react';
 
 interface HeroSectionProps {
   onGetStarted: () => void;
@@ -6,38 +7,62 @@ interface HeroSectionProps {
 
 export function HeroSection({ onGetStarted }: HeroSectionProps) {
   return (
-    <section id="hero" className="pt-20 sm:pt-24 pb-12 sm:pb-16 px-4 sm:px-6 bg-gradient-to-b from-gray-50 to-white">
-      <div className="max-w-7xl mx-auto text-center">
-        <div className="inline-flex items-center bg-black text-white px-3 py-1.5 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-medium mb-4 sm:mb-6">
-          <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-green-400 rounded-full mr-2"></span>
-          Live Demo Available
+    <section className="min-h-screen flex items-center justify-center px-4 bg-white">
+      <div className="max-w-4xl mx-auto text-center">
+        {/* Status Badge */}
+        <div className="inline-flex items-center bg-gray-50 border border-gray-200 text-gray-800 px-3 py-1.5 rounded-full text-xs font-medium mb-6  mt-10">
+          <span className="w-2 h-2 bg-black rounded-full mr-2"></span>
+          Powered by Amadeus API
         </div>
         
-        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 sm:mb-6 leading-tight">
-          Find Your Perfect Flight
-          <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"> Smarter</span>
+        {/* Main Heading */}
+        <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-black mb-4 leading-tight tracking-tight">
+          Find Your Perfect Flight,
+          <br />
+          <span className="text-gray-500">
+            Instantly
+          </span>
         </h1>
         
-        <p className="text-base sm:text-lg md:text-xl text-gray-600 mb-6 sm:mb-8 max-w-3xl mx-auto leading-relaxed">
-          Modern flight search engine with real-time data, intelligent filtering, and beautiful visualizations. 
-          Built with cutting-edge web technology for an exceptional user experience.
+        {/* Description */}
+        <p className="text-lg sm:text-xl text-gray-500 mb-8 max-w-2xl mx-auto">
+          Real-time search • Smart filters • Live price charts • Built with React & TypeScript
         </p>
         
-        <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center">
-          <Button 
-            onClick={onGetStarted}
-            size="lg"
-            className="w-full sm:w-auto bg-black text-white hover:bg-gray-900 px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg shadow-md hover:shadow-lg transition-all duration-200"
-          >
-            Start Searching
-          </Button>
-          <Button 
-            variant="outline"
-            size="lg"
-            className="w-full sm:w-auto border-2 border-gray-800 text-gray-800 hover:bg-gray-800 hover:text-white px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg transition-all duration-200"
-          >
-            View Demo
-          </Button>
+        {/* CTA Button */}
+        <Button 
+          onClick={onGetStarted}
+          size="lg"
+          className="bg-black text-white hover:bg-gray-800 px-8 py-3.5 text-lg shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 flex items-center gap-2 mx-auto"
+        >
+          Search Flights Now <ArrowRight className="w-5 h-5" />
+        </Button>
+        
+        {/* Features Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-16 text-left">
+          <div className="p-6 rounded-2xl bg-gray-50 border border-gray-100 hover:border-gray-200 transition-colors">
+            <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center border border-gray-100 mb-4 shadow-sm">
+              <Zap className="w-5 h-5 text-black" />
+            </div>
+            <h3 className="font-semibold text-black mb-1">Real-Time Search</h3>
+            <p className="text-sm text-gray-500">Instant results from live flight data via Amadeus</p>
+          </div>
+          
+          <div className="p-6 rounded-2xl bg-gray-50 border border-gray-100 hover:border-gray-200 transition-colors">
+            <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center border border-gray-100 mb-4 shadow-sm">
+              <SlidersHorizontal className="w-5 h-5 text-black" />
+            </div>
+            <h3 className="font-semibold text-black mb-1">Smart Filtering</h3>
+            <p className="text-sm text-gray-500">Filter easily by price, stops, and favorite airlines</p>
+          </div>
+          
+          <div className="p-6 rounded-2xl bg-gray-50 border border-gray-100 hover:border-gray-200 transition-colors">
+            <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center border border-gray-100 mb-4 shadow-sm">
+              <BarChart3 className="w-5 h-5 text-black" />
+            </div>
+            <h3 className="font-semibold text-black mb-1">Price Analytics</h3>
+            <p className="text-sm text-gray-500">Visual price trends to help you find the best deal</p>
+          </div>
         </div>
       </div>
     </section>
