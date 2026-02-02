@@ -1,13 +1,11 @@
 import { useState } from 'react';
 import { Plane, Menu, X } from 'lucide-react';
 import { Button } from '../ui/Button';
+import { useNavigate, useRouterState } from '@tanstack/react-router';
 
-interface NavbarProps {
-  onGetStarted: () => void;
-  scrollToSection: (sectionId: string) => void;
-}
-
-export function Navbar({ onGetStarted, scrollToSection }: NavbarProps) {
+export function Navbar() {
+  const navigate = useNavigate();
+  const routerState = useRouterState();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const navLinks = [
@@ -18,7 +16,27 @@ export function Navbar({ onGetStarted, scrollToSection }: NavbarProps) {
   ];
 
   const handleNavClick = (sectionId: string) => {
-    scrollToSection(sectionId);
+    setIsMobileMenuOpen(false);
+    
+    // If we are on the home page, scroll to section
+    if (routerState.location.pathname === '/') {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    } else {
+      // Navigate to home first, then ideally scroll (simplified to just nav home for now)
+      navigate({ to: '/' });
+      // Optional: Logic to scroll after nav could be added here or via hash
+      setTimeout(() => {
+         const element = document.getElementById(sectionId);
+         if (element) element.scrollIntoView({ behavior: 'smooth' });
+      }, 100);
+    }
+  };
+
+  const handleGetStarted = () => {
+    navigate({ to: '/search' });
     setIsMobileMenuOpen(false);
   };
 
@@ -50,7 +68,7 @@ export function Navbar({ onGetStarted, scrollToSection }: NavbarProps) {
           {/* CTA Buttons */}
           <div className="flex items-center space-x-2 sm:space-x-4">
             <Button 
-              onClick={onGetStarted}
+              onClick={handleGetStarted}
               size="sm"
               className="bg-black text-white hover:bg-gray-900 text-xs sm:text-sm px-2 sm:px-4 py-1.5 sm:py-2.5 shadow-md hover:shadow-lg transition-all duration-200"
             >

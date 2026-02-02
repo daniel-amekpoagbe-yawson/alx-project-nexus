@@ -1,4 +1,3 @@
-import { Navbar } from './Navbar';
 import { HeroSection } from './HeroSection';
 import { StatsSection } from './StatsSection';
 import { FeaturesSection } from './FeaturesSection';
@@ -27,7 +26,7 @@ function LandingPage() {
 
   return (
     <div className="min-h-screen bg-white">
-      <Navbar onGetStarted={handleGetStarted} scrollToSection={scrollToSection} />
+      {/* Navbar moved to __root.tsx */}
       <HeroSection onGetStarted={handleGetStarted} />
       <StatsSection />
       <FeaturesSection />
