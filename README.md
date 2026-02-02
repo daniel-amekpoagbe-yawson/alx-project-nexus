@@ -27,12 +27,10 @@ Travel planning should be simple and delightful. Flight-Search reimagines the fl
 
 | Resource | URL |
 |----------|-----|
-| 🌐 **Live Application** | [skysearch.vercel.app](YOUR_VERCEL_URL) |
-| 🎥 **Demo Video** | [YouTube Demo](YOUR_YOUTUBE_URL) |
+| 🌐 **Live Application** | [Flightsearch.vercel.app](YOUR_VERCEL_URL) |
+| 🎥 **Demo Video** | [Loom Demo](YOUR_YOUTUBE_URL) |
 | 📊 **Presentation** | [Google Slides](YOUR_SLIDES_URL) |
 | 🎨 **Figma Design** | [Figma Prototype](YOUR_FIGMA_URL) |
-| 💻 **GitHub Repository** | [Source Code](YOUR_GITHUB_URL) |
-
 ---
 
 ## ✨ Features
@@ -91,7 +89,7 @@ Travel planning should be simple and delightful. Flight-Search reimagines the fl
 ## 📸 Screenshots
 
 ### Desktop View
-![Desktop Search Interface](./screenshots/desktop-search.png)
+![Desktop Search Interface](./public/desktop.png)
 *Clean search interface with intuitive form controls*
 
 ### Filters & Price Chart
