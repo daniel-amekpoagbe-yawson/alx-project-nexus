@@ -1,21 +1,9 @@
-import { useState } from 'react'
 import { Button } from '../ui/Button'
-import { Input } from '../ui/Input'
-import Demo from '../ui/Demo'
 
 function LandingPage() {
-  const [email, setEmail] = useState('')
-
   const handleGetStarted = () => {
-    // For now, navigate to search - will update after routing is fixed
-    window.location.href = '/home';
-  }
-
-  const handleNewsletterSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    console.log('Newsletter signup:', email)
-    // Handle newsletter signup here
-    setEmail('')
+    // Navigate to main search page
+    window.location.href = '/';
   }
 
   return (
@@ -71,136 +59,130 @@ function LandingPage() {
       </nav>
 
       {/* Hero Section */}
-      <section className="pt-32 pb-20 px-6 relative overflow-hidden">
-        {/* Background decoration */}
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-white to-purple-50 opacity-50"></div>
-        <div className="absolute top-20 left-10 w-72 h-72 bg-blue-200 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob"></div>
-        <div className="absolute top-40 right-10 w-72 h-72 bg-purple-200 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-2000"></div>
-        <div className="absolute -bottom-8 left-20 w-72 h-72 bg-pink-200 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-4000"></div>
-        
-        <div className="max-w-7xl mx-auto text-center relative z-10">
-          <div className="inline-flex items-center bg-black text-white px-4 py-2 rounded-full text-sm font-medium mb-6 animate-fade-in-up">
-            <span className="w-2 h-2 bg-green-400 rounded-full mr-2 animate-pulse"></span>
-            Live Demo Available Now
+      <section className="pt-24 pb-16 px-6 bg-gradient-to-b from-gray-50 to-white">
+        <div className="max-w-7xl mx-auto text-center">
+          <div className="inline-flex items-center bg-black text-white px-4 py-2 rounded-full text-sm font-medium mb-6">
+            <span className="w-2 h-2 bg-green-400 rounded-full mr-2"></span>
+            Live Demo Available
           </div>
           
-          <h1 className="text-5xl md:text-7xl font-bold text-gray-900 mb-6 leading-tight animate-fade-in-up animation-delay-200">
+          <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
             Find Your Perfect Flight
-            <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent"> Smarter</span>
+            <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"> Smarter</span>
           </h1>
           
-          <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed animate-fade-in-up animation-delay-400">
+          <p className="text-lg md:text-xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed">
             Modern flight search engine with real-time data, intelligent filtering, and beautiful visualizations. 
             Built with cutting-edge web technology for an exceptional user experience.
           </p>
           
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in-up animation-delay-600">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Button 
               onClick={handleGetStarted}
               size="lg"
-              className="bg-black text-white hover:bg-gray-900 px-8 py-4 text-lg transform hover:scale-105 transition-all duration-200 shadow-lg hover:shadow-xl"
+              className="bg-black text-white hover:bg-gray-900 px-8 py-4 text-lg shadow-md hover:shadow-lg transition-all duration-200"
             >
-              Start Searching Now
+              Start Searching
             </Button>
             <Button 
               variant="outline"
               size="lg"
-              className="border-2 border-gray-800 text-gray-800 hover:bg-gray-800 hover:text-white px-8 py-4 text-lg transform hover:scale-105 transition-all duration-200"
+              className="border-2 border-gray-800 text-gray-800 hover:bg-gray-800 hover:text-white px-8 py-4 text-lg transition-all duration-200"
             >
               View Demo
             </Button>
           </div>
 
-          {/* Animated Stats */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-20">
-            <div className="text-center animate-fade-in-up animation-delay-800">
-              <div className="text-4xl font-bold text-gray-900 mb-2 counter">50K+</div>
-              <div className="text-gray-600 font-medium">Daily Searches</div>
+          {/* Stats */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 mt-16">
+            <div className="text-center">
+              <div className="text-3xl md:text-4xl font-bold text-gray-900 mb-2">50K+</div>
+              <div className="text-gray-600 text-sm md:text-base">Daily Searches</div>
             </div>
-            <div className="text-center animate-fade-in-up animation-delay-1000">
-              <div className="text-4xl font-bold text-gray-900 mb-2 counter">99.9%</div>
-              <div className="text-gray-600 font-medium">Uptime</div>
+            <div className="text-center">
+              <div className="text-3xl md:text-4xl font-bold text-gray-900 mb-2">99.9%</div>
+              <div className="text-gray-600 text-sm md:text-base">Uptime</div>
             </div>
-            <div className="text-center animate-fade-in-up animation-delay-1200">
-              <div className="text-4xl font-bold text-gray-900 mb-2 counter">&lt;200ms</div>
-              <div className="text-gray-600 font-medium">Response Time</div>
+            <div className="text-center">
+              <div className="text-3xl md:text-4xl font-bold text-gray-900 mb-2">&lt;200ms</div>
+              <div className="text-gray-600 text-sm md:text-base">Response Time</div>
             </div>
-            <div className="text-center animate-fade-in-up animation-delay-1400">
-              <div className="text-4xl font-bold text-gray-900 mb-2 counter">4.9★</div>
-              <div className="text-gray-600 font-medium">User Rating</div>
+            <div className="text-center">
+              <div className="text-3xl md:text-4xl font-bold text-gray-900 mb-2">4.9★</div>
+              <div className="text-gray-600 text-sm md:text-base">User Rating</div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Features Section */}
-      <section id="features" className="py-20 px-6 bg-gradient-to-br from-gray-50 to-white">
+      <section id="features" className="py-16 px-6 bg-gray-50">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16 animate-fade-in-up">
-            <h2 className="text-5xl font-bold text-gray-900 mb-4">Powerful Features</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Everything you need for seamless flight search and booking experience
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Powerful Features</h2>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              Everything you need for seamless flight search and booking
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="feature-card bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 group cursor-pointer">
-              <div className="w-14 h-14 bg-gradient-to-br from-blue-400 to-blue-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                <span className="text-3xl">🔍</span>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+            <div className="feature-card bg-white p-6 md:p-8 rounded-xl shadow-md hover:shadow-lg transition-all duration-200 border border-gray-100">
+              <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4 md:mb-6">
+                <span className="text-2xl md:text-3xl">🔍</span>
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors">Real-Time Search</h3>
-              <p className="text-gray-600 leading-relaxed">
-                Instant access to live flight data from Amadeus API with intelligent caching and auto-refresh.
+              <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-2 md:mb-3">Real-Time Search</h3>
+              <p className="text-gray-600 leading-relaxed text-sm md:text-base">
+                Instant access to live flight data with intelligent caching and auto-refresh.
               </p>
             </div>
 
-            <div className="feature-card bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 group cursor-pointer">
-              <div className="w-14 h-14 bg-gradient-to-br from-green-400 to-green-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                <span className="text-3xl">📊</span>
+            <div className="feature-card bg-white p-6 md:p-8 rounded-xl shadow-md hover:shadow-lg transition-all duration-200 border border-gray-100">
+              <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4 md:mb-6">
+                <span className="text-2xl md:text-3xl">📊</span>
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-green-600 transition-colors">Price Analytics</h3>
-              <p className="text-gray-600 leading-relaxed">
-                Interactive price charts and trend analysis to help you find the best deals and optimal booking times.
+              <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-2 md:mb-3">Price Analytics</h3>
+              <p className="text-gray-600 leading-relaxed text-sm md:text-base">
+                Interactive price charts and trend analysis to find best deals.
               </p>
             </div>
 
-            <div className="feature-card bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 group cursor-pointer">
-              <div className="w-14 h-14 bg-gradient-to-br from-purple-400 to-purple-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                <span className="text-3xl">🎯</span>
+            <div className="feature-card bg-white p-6 md:p-8 rounded-xl shadow-md hover:shadow-lg transition-all duration-200 border border-gray-100">
+              <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4 md:mb-6">
+                <span className="text-2xl md:text-3xl">🎯</span>
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-purple-600 transition-colors">Smart Filtering</h3>
-              <p className="text-gray-600 leading-relaxed">
-                Advanced filtering by price, stops, airlines, and time ranges with instant visual updates.
+              <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-2 md:mb-3">Smart Filtering</h3>
+              <p className="text-gray-600 leading-relaxed text-sm md:text-base">
+                Advanced filtering by price, stops, airlines, and time ranges.
               </p>
             </div>
 
-            <div className="feature-card bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 group cursor-pointer">
-              <div className="w-14 h-14 bg-gradient-to-br from-orange-400 to-orange-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                <span className="text-3xl">📱</span>
+            <div className="feature-card bg-white p-6 md:p-8 rounded-xl shadow-md hover:shadow-lg transition-all duration-200 border border-gray-100">
+              <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mb-4 md:mb-6">
+                <span className="text-2xl md:text-3xl">📱</span>
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-orange-600 transition-colors">Mobile Optimized</h3>
-              <p className="text-gray-600 leading-relaxed">
-                Fully responsive design that works flawlessly on all devices with touch-friendly interactions.
+              <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-2 md:mb-3">Mobile Optimized</h3>
+              <p className="text-gray-600 leading-relaxed text-sm md:text-base">
+                Fully responsive design that works flawlessly on all devices.
               </p>
             </div>
 
-            <div className="feature-card bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 group cursor-pointer">
-              <div className="w-14 h-14 bg-gradient-to-br from-red-400 to-red-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                <span className="text-3xl">⚡</span>
+            <div className="feature-card bg-white p-6 md:p-8 rounded-xl shadow-md hover:shadow-lg transition-all duration-200 border border-gray-100">
+              <div className="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mb-4 md:mb-6">
+                <span className="text-2xl md:text-3xl">⚡</span>
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-red-600 transition-colors">Lightning Fast</h3>
-              <p className="text-gray-600 leading-relaxed">
-                Optimized performance with React Query caching, virtual scrolling, and code splitting.
+              <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-2 md:mb-3">Lightning Fast</h3>
+              <p className="text-gray-600 leading-relaxed text-sm md:text-base">
+                Optimized performance with React Query caching and code splitting.
               </p>
             </div>
 
-            <div className="feature-card bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 group cursor-pointer">
-              <div className="w-14 h-14 bg-gradient-to-br from-indigo-400 to-indigo-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                <span className="text-3xl">🔒</span>
+            <div className="feature-card bg-white p-6 md:p-8 rounded-xl shadow-md hover:shadow-lg transition-all duration-200 border border-gray-100">
+              <div className="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center mb-4 md:mb-6">
+                <span className="text-2xl md:text-3xl">🔒</span>
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-indigo-600 transition-colors">Type Safe</h3>
-              <p className="text-gray-600 leading-relaxed">
-                Built with TypeScript for robust type safety and better developer experience.
+              <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-2 md:mb-3">Type Safe</h3>
+              <p className="text-gray-600 leading-relaxed text-sm md:text-base">
+                Built with TypeScript for robust type safety and better DX.
               </p>
             </div>
           </div>
@@ -209,9 +191,21 @@ function LandingPage() {
 
       
       {/* Demo Section */}
-      <span>
-        <Demo/>
-      </span>
+      <div className="py-16 px-6 bg-gray-50">
+        <div className="max-w-7xl mx-auto text-center">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Live Demo Available</h2>
+          <p className="text-lg text-gray-600 mb-8 max-w-3xl mx-auto">
+            Try the flight search engine in action with real-time data and smooth interactions
+          </p>
+          <Button 
+            onClick={handleGetStarted}
+            size="lg"
+            className="bg-black text-white hover:bg-gray-900 px-8 py-4 text-lg shadow-md"
+          >
+            Try Demo Now
+          </Button>
+        </div>
+      </div>
 
 
       
