@@ -4,19 +4,22 @@ export function Footer() {
 
   return (
     <footer className="bg-black text-gray-300 py-6 px-4 border-t border-gray-800">
-      <div className="max-w-7xl mx-auto w-full flex flex-col md:flex-row items-center justify-between gap-4">
+      <div className="max-w-7xl mx-auto w-full grid grid-cols-1 md:grid-cols-3 gap-4 items-center">
         
-        {/* Brand/Attribution */}
-        <div className="flex items-center gap-2">
+        {/* Left: Built by */}
+        <div className="flex justify-center md:justify-start">
           <p className="text-sm text-gray-400">
             Built by <a href="https://github.com/daniel-amekpoagbe-yawson" target="_blank" rel="noopener noreferrer" className="text-white hover:text-blue-400 transition-colors font-medium">Daniel Amekpoagbe</a>
           </p>
         </div>
 
-        {/* Links & Copyright */}
-        <div className="flex items-center gap-4 text-xs sm:text-sm text-gray-500">
+        {/* Center: Copyright */}
+        <div className="flex justify-center text-xs sm:text-sm text-gray-500">
           <p>© {currentYear} All rights reserved.</p>
-          <div className="w-1 h-1 bg-gray-700 rounded-full" />
+        </div>
+
+        {/* Right: Portfolio */}
+        <div className="flex justify-center md:justify-end text-xs sm:text-sm text-gray-500">
           <a 
             href="https://github.com/daniel-amekpoagbe-yawson" 
             target="_blank" 
