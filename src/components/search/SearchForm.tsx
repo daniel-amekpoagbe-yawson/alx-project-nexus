@@ -66,9 +66,9 @@ export const SearchForm: React.FC<SearchFormProps> = ({ onSearch, isLoading, ini
   const [showDestinationSuggestions, setShowDestinationSuggestions] = useState(false);
   const [activeField, setActiveField] = useState<'origin' | 'destination' | null>(null);
 
-  // Debounce search inputs (500ms delay) to prevent rate limiting
-  const debouncedOrigin = useDebounce(origin, 500);
-  const debouncedDestination = useDebounce(destination, 500);
+  // Debounce search inputs (300ms delay) to prevent rate limiting
+  const debouncedOrigin = useDebounce(origin, 300);
+  const debouncedDestination = useDebounce(destination, 300);
 
   // Refs for click outside detection
   const originRef = useRef<HTMLDivElement>(null);
