@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { X, Filter } from 'lucide-react';
 import { Card } from '../../components/ui/Card';
 import { Button } from '../../components/ui/Button';
 import { PriceFilter } from './PriceFilter';
@@ -30,23 +31,54 @@ export const FilterPanel: React.FC<FilterPanelProps> = ({
   dictionaries,
   resultCount,
 }) => {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
     <Card className="sticky top-4">
       <div className="space-y-6">
-        {/* Header */}
+        {/* Header - Always visible */}
         <div className="flex justify-between items-center pb-2 border-b border-gray-100">
-          <h2 className="text-xl font-bold text-gray-900">Filters</h2>
+          <div className="flex items-center gap-2">
+            <h2 className="text-xl font-bold text-gray-900">Filters</h2>
+            <div className="lg:hidden">
+              <span className="text-sm text-gray-500 font-normal">({resultCount})</span>
+            </div>
+          </div>
+          
+          {/* Mobile Toggle Button */}
+          <Button 
+            variant="ghost" 
+            size="sm" 
+            className="lg:hidden"
+            onClick={() => setIsOpen(!isOpen)}
+          >
+            {isOpen ? <X className="w-4 h-4" /> : <Filter className="w-4 h-4" />}
+          </Button>
+
+          {/* Desktop Clear Button */}
           {hasActiveFilters && (
-            <Button variant="ghost" size="sm" onClick={resetFilters}>
-              ✕ Clear
+            <Button variant="ghost" size="sm" onClick={resetFilters} className="hidden lg:flex items-center gap-1">
+              <X className="w-3 h-3" /> Clear
             </Button>
           )}
         </div>
 
-        {/* Result count */}
-        <div className="text-base font-normal text-gray-800 px-2 py-2 bg-gray-50 rounded-lg text-center">
-          {resultCount} flight{resultCount !== 1 ? 's' : ''} found
-        </div>
+        {/* Mobile Content Toggle */}
+        <div className={`${isOpen ? 'block' : 'hidden'} lg:block space-y-6`}>
+          {/* Mobile Clear Button */}
+          {hasActiveFilters && (
+             <div className="lg:hidden">
+               <Button variant="secondary" size="sm" onClick={resetFilters} fullWidth className="flex items-center justify-center gap-1 mb-4">
+                 <X className="w-3 h-3" /> Clear All Filters
+               </Button>
+             </div>
+          )}
+
+          {/* Result count (Desktop only) */}
+          <div className="hidden lg:block text-base font-normal text-gray-800 px-2 py-2 bg-gray-50 rounded-lg text-center">
+            {resultCount} flight{resultCount !== 1 ? 's' : ''} found
+          </div>
+
 
         {/* Divider */}
         <div className="border-t border-gray-100" />
@@ -94,6 +126,7 @@ export const FilterPanel: React.FC<FilterPanelProps> = ({
           onChange={(value) => updateFilter('airlines', value)}
           dictionaries={dictionaries}
         />
+        </div>
       </div>
     </Card>
   );

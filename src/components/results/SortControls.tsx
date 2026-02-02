@@ -1,4 +1,5 @@
 import React from 'react';
+import { ArrowUp, ArrowDown } from 'lucide-react';
 
 interface SortControlsProps {
   sortField: 'price' | 'duration' | 'departure';
@@ -24,7 +25,7 @@ export const SortControls: React.FC<SortControlsProps> = ({
             <button
               key={field}
               onClick={() => onSort(field)}
-              className={`px-4 py-2.5 rounded-lg text-sm font-normal transition-all duration-200 ${
+              className={`px-4 py-2.5 rounded-lg text-sm font-normal transition-all duration-200 flex items-center gap-1 ${
                 sortField === field
                   ? 'bg-black text-white shadow-md'
                   : 'bg-gray-100 text-gray-800 hover:bg-gray-200'
@@ -34,9 +35,9 @@ export const SortControls: React.FC<SortControlsProps> = ({
               {field === 'duration' && 'Duration'}
               {field === 'departure' && 'Departure'}
               {sortField === field && (
-                <span className="ml-2">
-                  {sortDirection === 'asc' ? '↑' : '↓'}
-                </span>
+                sortDirection === 'asc' 
+                  ? <ArrowUp className="w-3 h-3" />
+                  : <ArrowDown className="w-3 h-3" />
               )}
             </button>
           ))}
