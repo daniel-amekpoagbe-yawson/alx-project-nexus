@@ -1,6 +1,7 @@
 
 
 import React, { useState, useRef, useEffect } from 'react';
+import { Loader2 } from 'lucide-react';
 import { Button } from '../../components/ui/Button';
 import { Input } from '../../components/ui/Input';
 import { Select } from '../../components/ui/Select';
@@ -216,7 +217,10 @@ export const SearchForm: React.FC<SearchFormProps> = ({ onSearch, isLoading, ini
             {showOriginSuggestions && origin.length >= 2 && (
               <div className="absolute z-10 w-full mt-2 bg-white border border-gray-100 rounded-lg shadow-lg max-h-60 overflow-y-auto">
                 {isLoadingOrigin ? (
-                  <div className="p-3 text-sm text-gray-600 font-normal">Loading airports...</div>
+                  <div className="p-3 text-sm text-gray-600 font-normal flex items-center gap-2">
+                    <Loader2 className="w-4 h-4 animate-spin" />
+                    Loading airports...
+                  </div>
                 ) : originAirports.length > 0 ? (
                   originAirports.map((airport) => (
                     <button
@@ -264,7 +268,10 @@ export const SearchForm: React.FC<SearchFormProps> = ({ onSearch, isLoading, ini
             {showDestinationSuggestions && destination.length >= 2 && (
               <div className="absolute z-10 w-full mt-2 bg-white border border-gray-100 rounded-lg shadow-lg max-h-60 overflow-y-auto">
                 {isLoadingDestination ? (
-                  <div className="p-4 text-sm text-gray-600 font-medium">Searching...</div>
+                  <div className="p-4 text-sm text-gray-600 font-medium flex items-center gap-2">
+                    <Loader2 className="w-4 h-4 animate-spin" />
+                    Searching...
+                  </div>
                 ) : destinationAirports.length > 0 ? (
                   destinationAirports.map((airport) => (
                     <button
