@@ -297,3 +297,149 @@ textarea {
 .animation-delay-4000 {
   animation-delay: 4000ms;
 }
+
+.animation-delay-5000 {
+  animation-delay: 5000ms;
+}
+
+/* Hover effects for cards */
+.feature-card:hover {
+  transform: translateY(-8px);
+}
+
+.tech-card:hover {
+  transform: translateY(-8px);
+}
+
+.feature-item:hover {
+  transform: translateX(8px);
+}
+
+/* Gradient text animations */
+@keyframes gradient-shift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient-shift 3s ease-in-out infinite;
+}
+
+/* Shadow animations */
+.shadow-lg {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.shadow-xl {
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.shadow-2xl {
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+.shadow-3xl {
+  box-shadow: 0 35px 60px -15px rgba(0, 0, 0, 0.3);
+}
+
+/* Glow effects */
+.glow-blue {
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
+}
+
+.glow-purple {
+  box-shadow: 0 0 20px rgba(147, 51, 234, 0.5);
+}
+
+.glow-green {
+  box-shadow: 0 0 20px rgba(34, 197, 94, 0.5);
+}
+
+/* Smooth hover transitions */
+.hover-lift {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px) scale(1.02);
+}
+
+/* Navigation links */
+.nav-link {
+  position: relative;
+  font-weight: 500;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: black;
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* Mobile menu animation */
+@keyframes slide-down {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.mobile-menu {
+  animation: slide-down 0.3s ease-out;
+}
+
+/* Enhanced button styles */
+.btn-glow:hover {
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Smooth scroll behavior for entire page */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Selection colors */
+::selection {
+  background-color: black;
+  color: white;
+}
+
+::-moz-selection {
+  background-color: black;
+  color: white;
+}
+
+/* Focus styles for accessibility */
+.focus-visible:focus {
+  outline: 2px solid black;
+  outline-offset: 2px;
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
