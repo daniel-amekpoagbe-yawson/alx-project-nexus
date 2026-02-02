@@ -13,7 +13,7 @@ import { Pagination } from '../components/results/Pagination';
 type FlightSearchSchema = Partial<SearchParams>;
 
 function FlightSearchPage() {
-  const navigate = useNavigate({ from: Route.fullPath });
+  const navigate = useNavigate({ from: '/' });
   const searchParams = Route.useSearch();
   const [currentPage, setCurrentPage] = useState(1);
 
@@ -65,8 +65,34 @@ function FlightSearchPage() {
   // Generate price trend data
   const priceTrend = usePriceTrend(allFlights, filteredFlights);
 
+  const goHome = () => {
+    // Navigate to landing page - for demo purposes, we'll reload with home path
+    window.location.href = '/home';
+  };
+
   return (
     <div className="min-h-screen bg-gray-50/50">
+      {/* Navigation */}
+      <nav className="bg-white border-b border-gray-100 sticky top-0 z-50">
+        <div className="max-w-7xl mx-auto px-6 py-4">
+          <div className="flex items-center justify-between">
+            <div className="flex items-center space-x-2">
+              <div className="w-8 h-8 bg-black rounded-lg flex items-center justify-center">
+                <span className="text-white font-bold text-sm">✈</span>
+              </div>
+              <span className="font-bold text-xl">FlightSearch</span>
+            </div>
+            
+            <button 
+              onClick={goHome}
+              className="text-gray-600 hover:text-black transition-colors text-sm"
+            >
+              ← Back to Home
+            </button>
+          </div>
+        </div>
+      </nav>
+
       <div className="w-full px-3 sm:px-4 md:px-6 py-4 sm:py-6">
         <div className="max-w-7xl mx-auto space-y-4">
           {/* Search Form - Pass URL params as initial values if needed, or controlled */}
@@ -138,6 +164,15 @@ function FlightSearchPage() {
                 </div>
               </div>
             </>
+          )}
+
+          {/* Initial state - show message to search */}
+          {!activeSearchParams && !isLoading && (
+            <div className="text-center py-16">
+              <div className="text-6xl mb-4">✈️</div>
+              <h2 className="text-2xl font-bold text-gray-900 mb-2">Welcome to Flight Search</h2>
+              <p className="text-gray-600">Enter your travel details above to find perfect flights</p>
+            </div>
           )}
         </div>
       </div>
