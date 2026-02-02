@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import type { SearchParams } from '../types/flight';
 import { useFlightFilters, useFlightSearch, useFlightSort, usePriceTrend } from '../hooks/useFlights';
 import { SearchForm } from '../components/search/SearchForm';
-import { PriceChart } from '../components/charts/PriceChart';
+import { PriceChart } from '../components/charts/PriceChart.lazy';
 import { FilterPanel } from '../components/filters/FilterPanel';
 import { FlightList } from '../components/results/FlightList';
 import { SortControls } from '../components/results/SortControls';
