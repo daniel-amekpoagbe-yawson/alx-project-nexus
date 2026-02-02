@@ -1,4 +1,5 @@
 import React from 'react';
+import { X } from 'lucide-react';
 import { Card } from '../../components/ui/Card';
 import { Button } from '../../components/ui/Button';
 import { PriceFilter } from './PriceFilter';
@@ -37,8 +38,8 @@ export const FilterPanel: React.FC<FilterPanelProps> = ({
         <div className="flex justify-between items-center pb-2 border-b border-gray-100">
           <h2 className="text-xl font-bold text-gray-900">Filters</h2>
           {hasActiveFilters && (
-            <Button variant="ghost" size="sm" onClick={resetFilters}>
-              ✕ Clear
+            <Button variant="ghost" size="sm" onClick={resetFilters} className="flex items-center gap-1">
+              <X className="w-3 h-3" /> Clear
             </Button>
           )}
         </div>
