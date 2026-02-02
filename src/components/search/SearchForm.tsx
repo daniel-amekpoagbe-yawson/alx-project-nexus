@@ -128,8 +128,24 @@ export const SearchForm: React.FC<SearchFormProps> = ({ onSearch, isLoading, ini
     e.preventDefault();
 
     // Validation
-    if (!selectedOrigin || !selectedDestination) {
-      alert('Please select both origin and destination airports');
+    // Validation - Attempt to extract code if selectedOrigin/Destination are missing
+    // Matches "City Name (ABC)" format or just "ABC"
+    const codeRegex = /\(([A-Z]{3})\)$|^([A-Z]{3})$/i;
+    
+    let finalOrigin = selectedOrigin;
+    if (!finalOrigin && origin) {
+      const match = origin.match(codeRegex);
+      if (match) finalOrigin = (match[1] || match[2]).toUpperCase();
+    }
+
+    let finalDestination = selectedDestination;
+    if (!finalDestination && destination) {
+      const match = destination.match(codeRegex);
+      if (match) finalDestination = (match[1] || match[2]).toUpperCase();
+    }
+
+    if (!finalOrigin || !finalDestination) {
+      alert('Please select valid origin and destination airports');
       return;
     }
 
@@ -145,8 +161,8 @@ export const SearchForm: React.FC<SearchFormProps> = ({ onSearch, isLoading, ini
 
     // Build search parameters
     const searchParams: SearchParams = {
-      origin: selectedOrigin,
-      destination: selectedDestination,
+      origin: finalOrigin,
+      destination: finalDestination,
       departureDate,
       returnDate: tripType === 'roundtrip' ? returnDate : undefined,
       adults,
