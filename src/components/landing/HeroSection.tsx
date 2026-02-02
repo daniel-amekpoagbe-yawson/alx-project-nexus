@@ -1,5 +1,5 @@
 import { Button } from '../ui/Button';
-import { Zap, SlidersHorizontal, BarChart3, ArrowRight } from 'lucide-react';
+import { Zap, SlidersHorizontal, BarChart3 } from 'lucide-react';
 
 interface HeroSectionProps {
   onGetStarted: () => void;
@@ -11,31 +11,31 @@ export function HeroSection({ onGetStarted }: HeroSectionProps) {
       <div className="max-w-4xl mx-auto text-center">
         {/* Status Badge */}
         <div className="inline-flex items-center bg-gray-50 border border-gray-200 text-gray-800 px-3 py-1.5 rounded-full text-xs font-medium mb-6  mt-10">
-          <span className="w-2 h-2 bg-black rounded-full mr-2"></span>
+          <span className="w-2 h-2 bg-black rounded-full mr-2 animate-pulse"></span>
           Powered by Amadeus API
         </div>
         
         {/* Main Heading */}
-        <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-black mb-4 leading-tight tracking-tight">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-black mb-4 leading-tight tracking-tight">
           Find Your Perfect Flight,
           <br />
-          <span className="text-gray-500">
+          <span className="text-gray-black/60">
             Instantly
           </span>
         </h1>
         
         {/* Description */}
-        <p className="text-lg sm:text-xl text-gray-500 mb-8 max-w-2xl mx-auto">
-          Real-time search • Smart filters • Live price charts • Built with React & TypeScript
+        <p className="text-sm sm:text-base text-gray-500 mb-8 max-w-2xl mx-auto">
+          Real-time search • Smart filters • Live price charts 
         </p>
         
         {/* CTA Button */}
         <Button 
           onClick={onGetStarted}
           size="lg"
-          className="bg-black text-white hover:bg-gray-800 px-8 py-3.5 text-lg shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 flex items-center gap-2 mx-auto"
+          className="bg-black text-white hover:bg-gray-800 px-8 py-3.5 text-lg shadow-xl transition-all duration-300 transform flex items-center gap-2 mx-auto"
         >
-          Search Flights Now <ArrowRight className="w-5 h-5" />
+          Search Flights Now 
         </Button>
         
         {/* Features Grid */}

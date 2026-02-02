@@ -1,6 +1,7 @@
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 import { createRootRoute, Outlet } from '@tanstack/react-router';
 import { Navbar } from '../components/landing/Navbar';
+import { Footer } from '../components/landing/Footer';
 
 export const Route = createRootRoute({
   component: () => (
@@ -10,6 +11,8 @@ export const Route = createRootRoute({
         <Outlet />
         <ReactQueryDevtools initialIsOpen={false} />
       </main>
+      <Footer />
+
     </div>
   ),
 });
