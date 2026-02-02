@@ -186,91 +186,91 @@ function LandingPage() {
       </section>
 
       {/* Tech Stack Section */}
-      <section id="tech-stack" className="py-20 px-6">
+      <section id="tech-stack" className="py-20 px-6 bg-gradient-to-br from-white to-gray-50">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Modern Technology Stack</h2>
+            <h2 className="text-5xl font-bold text-gray-900 mb-4">Modern Technology Stack</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Built with cutting-edge tools and frameworks for optimal performance
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div>
+            <div className="animate-slide-in-left">
               <div className="grid grid-cols-3 gap-6">
-                <div className="text-center p-6 bg-gray-50 rounded-xl">
-                  <div className="text-3xl mb-3">⚛️</div>
+                <div className="tech-card text-center p-6 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-gray-100">
+                  <div className="text-4xl mb-3 animate-float">⚛️</div>
                   <div className="font-semibold text-gray-900">React 19</div>
                   <div className="text-sm text-gray-600">UI Library</div>
                 </div>
-                <div className="text-center p-6 bg-gray-50 rounded-xl">
-                  <div className="text-3xl mb-3">📘</div>
+                <div className="tech-card text-center p-6 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-gray-100">
+                  <div className="text-4xl mb-3 animate-float animation-delay-1000">📘</div>
                   <div className="font-semibold text-gray-900">TypeScript</div>
                   <div className="text-sm text-gray-600">Type Safety</div>
                 </div>
-                <div className="text-center p-6 bg-gray-50 rounded-xl">
-                  <div className="text-3xl mb-3">🎨</div>
+                <div className="tech-card text-center p-6 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-gray-100">
+                  <div className="text-4xl mb-3 animate-float animation-delay-2000">🎨</div>
                   <div className="font-semibold text-gray-900">Tailwind</div>
                   <div className="text-sm text-gray-600">Styling</div>
                 </div>
-                <div className="text-center p-6 bg-gray-50 rounded-xl">
-                  <div className="text-3xl mb-3">🚀</div>
+                <div className="tech-card text-center p-6 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-gray-100">
+                  <div className="text-4xl mb-3 animate-float animation-delay-3000">🚀</div>
                   <div className="font-semibold text-gray-900">Vite</div>
                   <div className="text-sm text-gray-600">Build Tool</div>
                 </div>
-                <div className="text-center p-6 bg-gray-50 rounded-xl">
-                  <div className="text-3xl mb-3">🔍</div>
+                <div className="tech-card text-center p-6 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-gray-100">
+                  <div className="text-4xl mb-3 animate-float animation-delay-4000">🔍</div>
                   <div className="font-semibold text-gray-900">React Query</div>
                   <div className="text-sm text-gray-600">Data Fetching</div>
                 </div>
-                <div className="text-center p-6 bg-gray-50 rounded-xl">
-                  <div className="text-3xl mb-3">📊</div>
+                <div className="tech-card text-center p-6 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-gray-100">
+                  <div className="text-4xl mb-3 animate-float animation-delay-5000">📊</div>
                   <div className="font-semibold text-gray-900">Recharts</div>
                   <div className="text-sm text-gray-600">Charts</div>
                 </div>
               </div>
             </div>
 
-            <div className="space-y-6">
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">Why This Stack?</h3>
+            <div className="space-y-6 animate-slide-in-right">
+              <h3 className="text-3xl font-bold text-gray-900 mb-6">Why This Stack?</h3>
               
-              <div className="flex items-start space-x-3">
-                <div className="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                  <span className="text-white text-xs">✓</span>
+              <div className="feature-item flex items-start space-x-3 group">
+                <div className="w-8 h-8 bg-gradient-to-br from-green-400 to-green-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1 group-hover:scale-110 transition-transform">
+                  <span className="text-white text-sm">✓</span>
                 </div>
                 <div>
-                  <h4 className="font-semibold text-gray-900">Performance First</h4>
-                  <p className="text-gray-600">Vite's hot module replacement and optimized bundling ensure lightning-fast development and production builds.</p>
+                  <h4 className="font-semibold text-gray-900 text-lg mb-2 group-hover:text-green-600 transition-colors">Performance First</h4>
+                  <p className="text-gray-600 leading-relaxed">Vite's hot module replacement and optimized bundling ensure lightning-fast development and production builds.</p>
                 </div>
               </div>
 
-              <div className="flex items-start space-x-3">
-                <div className="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                  <span className="text-white text-xs">✓</span>
+              <div className="feature-item flex items-start space-x-3 group">
+                <div className="w-8 h-8 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1 group-hover:scale-110 transition-transform">
+                  <span className="text-white text-sm">✓</span>
                 </div>
                 <div>
-                  <h4 className="font-semibold text-gray-900">Developer Experience</h4>
-                  <p className="text-gray-600">TypeScript provides compile-time error checking and excellent IDE support for faster development.</p>
+                  <h4 className="font-semibold text-gray-900 text-lg mb-2 group-hover:text-blue-600 transition-colors">Developer Experience</h4>
+                  <p className="text-gray-600 leading-relaxed">TypeScript provides compile-time error checking and excellent IDE support for faster development.</p>
                 </div>
               </div>
 
-              <div className="flex items-start space-x-3">
-                <div className="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                  <span className="text-white text-xs">✓</span>
+              <div className="feature-item flex items-start space-x-3 group">
+                <div className="w-8 h-8 bg-gradient-to-br from-purple-400 to-purple-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1 group-hover:scale-110 transition-transform">
+                  <span className="text-white text-sm">✓</span>
                 </div>
                 <div>
-                  <h4 className="font-semibold text-gray-900">Scalable Architecture</h4>
-                  <p className="text-gray-600">Component-based design with React Query for server state management scales beautifully with complexity.</p>
+                  <h4 className="font-semibold text-gray-900 text-lg mb-2 group-hover:text-purple-600 transition-colors">Scalable Architecture</h4>
+                  <p className="text-gray-600 leading-relaxed">Component-based design with React Query for server state management scales beautifully with complexity.</p>
                 </div>
               </div>
 
-              <div className="flex items-start space-x-3">
-                <div className="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                  <span className="text-white text-xs">✓</span>
+              <div className="feature-item flex items-start space-x-3 group">
+                <div className="w-8 h-8 bg-gradient-to-br from-orange-400 to-orange-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1 group-hover:scale-110 transition-transform">
+                  <span className="text-white text-sm">✓</span>
                 </div>
                 <div>
-                  <h4 className="font-semibold text-gray-900">Modern Development</h4>
-                  <p className="text-gray-600">Using the latest React 19 features, TanStack Router, and modern patterns for future-proof code.</p>
+                  <h4 className="font-semibold text-gray-900 text-lg mb-2 group-hover:text-orange-600 transition-colors">Modern Development</h4>
+                  <p className="text-gray-600 leading-relaxed">Using the latest React 19 features, TanStack Router, and modern patterns for future-proof code.</p>
                 </div>
               </div>
             </div>
