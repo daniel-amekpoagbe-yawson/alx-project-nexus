@@ -1,46 +1,8 @@
-# ✈️ SkySearch - Modern Flight Search Engine
 
-<div align="center">
-
-![SkySearch Banner](https://img.shields.io/badge/SkySearch-Flight_Search_Engine-blue?style=for-the-badge)
-[![Live Demo](https://img.shields.io/badge/🌐_Live_Demo-Visit_Now-success?style=for-the-badge)](YOUR_VERCEL_URL_HERE)
-[![License](https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge)](LICENSE)
-
-**A modern, intelligent flight search platform built with React, TypeScript, and real-time data visualization.**
-
-[Live Demo](YOUR_VERCEL_URL_HERE) · [Video Demo](YOUR_VIDEO_URL_HERE) · [Presentation](YOUR_SLIDES_URL_HERE) · [Report Bug](https://github.com/YOUR_USERNAME/skysearch/issues)
-
-</div>
-
----
-
-## 📋 Table of Contents
-
-- [Overview](#overview)
-- [Live Demo & Links](#live-demo--links)
-- [Features](#features)
-- [Screenshots](#screenshots)
-- [Technology Stack](#technology-stack)
-- [Architecture](#architecture)
-- [Getting Started](#getting-started)
-- [Usage Guide](#usage-guide)
-- [API Integration](#api-integration)
-- [Performance & Optimization](#performance--optimization)
-- [Security](#security)
-- [Accessibility](#accessibility)
-- [Development Process](#development-process)
-- [Challenges & Solutions](#challenges--solutions)
-- [Future Enhancements](#future-enhancements)
-- [Contributing](#contributing)
-- [Author](#author)
-- [License](#license)
-- [Acknowledgments](#acknowledgments)
-
----
 
 ## 🌟 Overview
 
-**SkySearch** is a modern, responsive flight search engine that provides real-time flight data, intelligent filtering, and beautiful data visualizations. Built as the capstone project for ALX Software Engineering Program, it demonstrates proficiency in modern web development, API integration, state management, and user experience design.
+**Flight-Search** is a modern, responsive flight search engine that provides real-time flight data, intelligent filtering, and beautiful data visualizations. Built as the capstone project for ALX Software Engineering Program, it demonstrates proficiency in modern web development, API integration, state management, and user experience design.
 
 ### 🎯 Project Goals
 
@@ -52,7 +14,7 @@
 
 ### 💡 Why This Project?
 
-Travel planning should be simple and delightful. SkySearch reimagines the flight search experience by:
+Travel planning should be simple and delightful. Flight-Search reimagines the flight search experience by:
 
 - **Eliminating complexity** - Clean, intuitive interface that anyone can use
 - **Providing transparency** - Live price charts show exactly where deals exist
@@ -149,7 +111,7 @@ Travel planning should be simple and delightful. SkySearch reimagines the flight
 ## 🛠️ Technology Stack
 
 ### Frontend Framework
-- **React 18** - Modern UI library with hooks and concurrent features
+- **React 19** - Modern UI library with hooks and concurrent features
 - **TypeScript** - Type-safe development with enhanced IDE support
 - **Tailwind CSS** - Utility-first CSS framework for rapid UI development
 
@@ -181,12 +143,11 @@ Travel planning should be simple and delightful. SkySearch reimagines the flight
 
 ---
 
-## 🏗️ Architecture
 
 ### Project Structure
 
 ```
-skysearch/
+Flight-search/
 ├── src/
 │   ├── components/          # React components
 │   │   ├── ui/             # Reusable UI components
@@ -222,7 +183,7 @@ skysearch/
 │   ├── main.tsx            # Application entry point
 │   └── index.css           # Global styles
 ├── public/                 # Static assets
-├── .env.example            # Environment variables template
+├── .env            # Environment variables template
 ├── package.json            # Dependencies
 ├── tsconfig.json           # TypeScript configuration
 ├── tailwind.config.js      # Tailwind configuration
@@ -254,7 +215,7 @@ skysearch/
 ### Prerequisites
 
 - **Node.js** 18.x or higher
-- **npm** 9.x or higher
+- **bun or npm** 
 - **Amadeus API credentials** (free tier available)
 
 ### Installation
@@ -267,7 +228,7 @@ skysearch/
 
 2. **Install dependencies**
    ```bash
-   npm install
+   bun install
    ```
 
 3. **Set up environment variables**
@@ -286,7 +247,7 @@ skysearch/
 
 4. **Start the development server**
    ```bash
-   npm run dev
+   bun run dev
    ```
 
 5. **Open your browser**
@@ -297,10 +258,10 @@ skysearch/
 
 ```bash
 # Create optimized production build
-npm run build
+bun run build
 
 # Preview production build locally
-npm run preview
+bun run preview
 ```
 
 ---
@@ -360,7 +321,7 @@ Each flight card shows:
 
 - **X-axis** - Price points (automatically calculated)
 - **Y-axis** - Number of flights at that price
-- **Blue line** - Flights matching current filters
+- **Black line** - Flights matching current filters
 - **Gray line** - All available flights
 - Compare lines to see how filters affect options
 
@@ -370,7 +331,7 @@ Each flight card shows:
 
 ### Amadeus Self-Service API
 
-SkySearch integrates with the Amadeus API for real-time flight data:
+Flight-Search integrates with the Amadeus API for real-time flight data:
 
 #### Endpoints Used
 
@@ -382,20 +343,6 @@ SkySearch integrates with the Amadeus API for real-time flight data:
    - Autocomplete for airports and cities
    - Returns IATA codes and location details
 
-#### Authentication
-
-- **OAuth 2.0** client credentials flow
-- Automatic token refresh before expiration
-- Tokens cached in memory (not localStorage for security)
-
-#### Error Handling
-
-- **400 Bad Request** - Invalid search parameters
-- **401 Unauthorized** - Authentication failed
-- **404 Not Found** - No flights available for route
-- **429 Too Many Requests** - Rate limit exceeded
-
-All errors provide user-friendly messages with actionable guidance.
 
 ---
 
@@ -464,43 +411,9 @@ All errors provide user-friendly messages with actionable guidance.
    - Secure headers in production
    - XSS protection via React's built-in escaping
 
-5. **Dependency Management**
-   - Regular security audits with `npm audit`
-   - Automated dependency updates
-   - No known vulnerabilities
 
 ---
 
-## ♿ Accessibility
-
-### WCAG 2.1 AA Compliance
-
-1. **Keyboard Navigation**
-   - All interactive elements keyboard accessible
-   - Logical tab order
-   - Visible focus indicators
-
-2. **Screen Reader Support**
-   - Semantic HTML elements
-   - ARIA labels where needed
-   - Descriptive link text
-
-3. **Color & Contrast**
-   - WCAG AA contrast ratios (4.5:1 minimum)
-   - Color not sole indicator of information
-   - High contrast mode compatible
-
-4. **Responsive Text**
-   - Scalable font sizes (rem/em units)
-   - Readable at 200% zoom
-   - No horizontal scrolling
-
-5. **Form Accessibility**
-   - Proper label associations
-   - Error messages linked to fields
-   - Clear validation feedback
-
----
 
 ## 🔨 Development Process
 
@@ -510,13 +423,6 @@ All errors provide user-friendly messages with actionable guidance.
 - **Feature Branches** - New features and experiments
 - **Meaningful Commits** - Clear, descriptive commit messages
 
-Example commit messages:
-```
-feat: Add price range filter component
-fix: Resolve autocomplete dropdown positioning
-refactor: Extract filter logic into custom hook
-docs: Update API integration documentation
-```
 
 ### Development Workflow
 
@@ -578,39 +484,6 @@ docs: Update API integration documentation
 
 ---
 
-## 🚀 Future Enhancements
-
-### Planned Features
-
-#### Short Term (Next Sprint)
-- [ ] Flight comparison - Select 2-3 flights for side-by-side comparison
-- [ ] Sort options - By price, duration, departure time
-- [ ] Price alerts - Notify when prices drop
-- [ ] Recent searches - Quick access to previous searches
-
-#### Medium Term
-- [ ] Multi-city search - Complex routing options
-- [ ] Calendar view - Flexible date selection with prices
-- [ ] Saved searches - User accounts and preferences
-- [ ] Email notifications - Price alerts via email
-
-#### Long Term
-- [ ] Flight tracking - Real-time flight status
-- [ ] Hotel integration - Book accommodations
-- [ ] Car rental - Complete travel booking
-- [ ] Travel insurance - Protection options
-
-### Technical Debt & Improvements
-
-- [ ] Implement comprehensive unit tests (Jest + React Testing Library)
-- [ ] Add E2E tests (Cypress or Playwright)
-- [ ] Set up CI/CD pipeline (GitHub Actions)
-- [ ] Add analytics (Plausible or Google Analytics)
-- [ ] Implement service worker for offline support
-- [ ] Add internationalization (i18n)
-
----
-
 ## 🤝 Contributing
 
 Contributions are welcome! This project is part of my ALX portfolio, but I'm open to improvements.
@@ -618,9 +491,9 @@ Contributions are welcome! This project is part of my ALX portfolio, but I'm ope
 ### How to Contribute
 
 1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
+2. Create a feature branch (`git checkout -b (Your branch name)`)
+3. Commit your changes (`git commit -m 'Message'`)
+4. Push to the branch (`git push origin (Branch name)`)
 5. Open a Pull Request
 
 ### Contribution Guidelines
@@ -635,14 +508,15 @@ Contributions are welcome! This project is part of my ALX portfolio, but I'm ope
 
 ## 👨‍💻 Author
 
-**Daniel [Your Last Name]**
+**Daniel Amekpoagbe**
 
 ALX Software Engineering Student | Full-Stack Developer
 
-- 🌐 Portfolio: [Your Portfolio URL]
-- 💼 LinkedIn: [Your LinkedIn]
-- 🐦 Twitter: [Your Twitter]
-- 📧 Email: [Your Email]
+- 🌐 Portfolio: [amekpoagbe.com](https://amekpoagbe.com)
+
+- 💼 LinkedIn: [amekpoagbe-daniel](https://www.linkedin.com/in/amekpoagbe-daniel/)
+
+- 📧 Email: [amekpoagbedaniel@gmail.com](mailto:amekpoagbedaniel@gmail.com)
 
 ### About Me
 
@@ -664,7 +538,7 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
 ```
 MIT License
 
-Copyright (c) 2024 Daniel [Your Last Name]
+Copyright (c) 2026 Daniel Amekpoagbe
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -693,18 +567,5 @@ in the Software without restriction...
 
 - **Google Flights** - UI/UX inspiration
 - **Kayak** - Feature inspiration
-- **Skyscanner** - Search functionality reference
-
----
-
-## 📊 Project Stats
-
-![GitHub Stars](https://img.shields.io/github/stars/YOUR_USERNAME/skysearch?style=social)
-![GitHub Forks](https://img.shields.io/github/forks/YOUR_USERNAME/skysearch?style=social)
-![GitHub Issues](https://img.shields.io/github/issues/YOUR_USERNAME/skysearch)
-![GitHub Pull Requests](https://img.shields.io/github/issues-pr/YOUR_USERNAME/skysearch)
-![Code Size](https://img.shields.io/github/languages/code-size/YOUR_USERNAME/skysearch)
-![Last Commit](https://img.shields.io/github/last-commit/YOUR_USERNAME/skysearch)
-
 ---
 
