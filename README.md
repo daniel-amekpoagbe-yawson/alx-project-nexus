@@ -93,12 +93,12 @@ Travel planning should be simple and delightful. Flight-Search reimagines the fl
 *Clean search interface with intuitive form controls*
 
 ### Filters & Price Chart
-![Filters and Live Chart](./screenshots/filters-chart.png)
+![Filters and Live Chart](./public/chart.png)
 *Real-time filtering with live price distribution updates*
 
 
 ### Mobile Experience
-![Mobile Responsive Design](./screenshots/mobile-view.png)
+![Mobile Responsive Design](./public/phone-version.png)
 *Fully responsive mobile interface with touch-optimized controls*
 
 ---
@@ -217,7 +217,7 @@ Flight-search/
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/YOUR_USERNAME/skysearch.git
+   git clone https://github.com/daniel-amekpoagbe-yawson/alx-project-nexus.git
    cd skysearch
    ```
 
@@ -505,7 +505,7 @@ Contributions are welcome! This project is part of my ALX portfolio, but I'm ope
 
 **Daniel Amekpoagbe**
 
-ALX Software Engineering Student | Full-Stack Developer
+ALX Software Engineering Student | Front-End Developer
 
 - 🌐 Portfolio: [amekpoagbe.com](https://amekpoagbe.com)
 
@@ -528,9 +528,6 @@ I'm a software engineer passionate about building user-centric applications with
 
 ## 📜 License
 
-This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
-
-```
 MIT License
 
 Copyright (c) 2026 Daniel Amekpoagbe
