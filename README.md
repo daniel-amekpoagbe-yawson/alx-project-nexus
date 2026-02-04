@@ -218,7 +218,7 @@ Flight-search/
 1. **Clone the repository**
    ```bash
    git clone https://github.com/daniel-amekpoagbe-yawson/alx-project-nexus.git
-   cd skysearch
+   cd alx-project-nexus
    ```
 
 2. **Install dependencies**
