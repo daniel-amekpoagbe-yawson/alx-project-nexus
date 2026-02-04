@@ -27,10 +27,10 @@ Travel planning should be simple and delightful. Flight-Search reimagines the fl
 
 | Resource | URL |
 |----------|-----|
-| 🌐 **Live Application** | [Flightsearch.vercel.app](YOUR_VERCEL_URL) |
-| 🎥 **Demo Video** | [Loom Demo](YOUR_YOUTUBE_URL) |
-| 📊 **Presentation** | [Google Slides](YOUR_SLIDES_URL) |
-| 🎨 **Figma Design** | [Figma Prototype](YOUR_FIGMA_URL) |
+| 🌐 **Live Application** | [flightsearch.amekpoagbe.com/](https://flightsearch.amekpoagbe.com/) |
+| 🎥 **Demo Video** | [Loom Demo](https://www.loom.com/share/11ef556d25cb427495b6e58a3b19e881) |
+| 📊 **Presentation** | [Google Slides](https://docs.google.com/document/d/1-kQPe7wbSo_2nCFZHoyhksjl_RY-kLzzbddksxMtoHA/edit?usp=sharing) |
+| 🎨 **Figma Design** | [Figma Prototype](https://www.figma.com/design/3fT0lUT7cZzYE4NySpA7as/Flight-search?node-id=0-1&t=nYZW15WImuJqu63G-1) |
 ---
 
 ## ✨ Features
