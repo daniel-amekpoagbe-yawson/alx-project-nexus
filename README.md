@@ -96,9 +96,6 @@ Travel planning should be simple and delightful. Flight-Search reimagines the fl
 ![Filters and Live Chart](./screenshots/filters-chart.png)
 *Real-time filtering with live price distribution updates*
 
-### Flight Results
-![Flight Results Display](./screenshots/flight-results.png)
-*Clear presentation of flight options with all relevant details*
 
 ### Mobile Experience
 ![Mobile Responsive Design](./screenshots/mobile-view.png)

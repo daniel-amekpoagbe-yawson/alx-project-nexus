@@ -95,9 +95,12 @@ class AmadeusService {
       this.accessToken = response.data.access_token;
       // Set expiry time (subtract 5 minutes for safety margin)
       this.tokenExpiry = Date.now() + (response.data.expires_in - 300) * 1000;
-    } catch (error) {
-      console.error('Authentication failed:', error);
-      throw new Error('Failed to authenticate with Amadeus API');
+    } catch (error: any) {
+      console.error('Amadeus Authentication failed:', error.response?.data || error.message);
+      if (error.response?.status === 401) {
+        throw new Error('Amadeus API credentials (Key/Secret) are invalid or expired.');
+      }
+      throw new Error(`Failed to authenticate with Amadeus API: ${error.message}`);
     }
   }
 
@@ -119,9 +122,12 @@ class AmadeusService {
       });
 
       return response.data.data || [];
-    } catch (error) {
-      console.error('Airport search failed:', error);
-      throw new Error('Failed to search airports');
+    } catch (error: any) {
+      console.error('Airport search failed:', error.response?.data || error.message);
+      if (error.response?.status === 401) {
+        throw new Error('Authentication failed. Please check your API credentials.');
+      }
+      throw new Error(error.response?.data?.errors?.[0]?.detail || 'Failed to search airports');
     }
   }
 

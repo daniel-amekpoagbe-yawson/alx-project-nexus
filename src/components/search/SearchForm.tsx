@@ -79,12 +79,12 @@ export const SearchForm: React.FC<SearchFormProps> = ({ onSearch, isLoading, ini
 
   // Airport search with debouncing handled by custom hook
   // We use the DEBOUNCED value for the API query key
-  const { airports: originAirports, isLoading: isLoadingOrigin } = useAirportSearch(
+  const { airports: originAirports, isLoading: isLoadingOrigin, error: errorOrigin } = useAirportSearch(
     debouncedOrigin,
     activeField === 'origin'
   );
   
-  const { airports: destinationAirports, isLoading: isLoadingDestination } = useAirportSearch(
+  const { airports: destinationAirports, isLoading: isLoadingDestination, error: errorDestination } = useAirportSearch(
     debouncedDestination,
     activeField === 'destination'
   );
@@ -237,6 +237,10 @@ export const SearchForm: React.FC<SearchFormProps> = ({ onSearch, isLoading, ini
                     <Loader2 className="w-4 h-4 animate-spin" />
                     Loading airports...
                   </div>
+                ) : errorOrigin ? (
+                  <div className="p-4 text-sm text-red-600 font-medium">
+                    {errorOrigin.message}
+                  </div>
                 ) : originAirports.length > 0 ? (
                   originAirports.map((airport) => (
                     <button
@@ -287,6 +291,10 @@ export const SearchForm: React.FC<SearchFormProps> = ({ onSearch, isLoading, ini
                   <div className="p-4 text-sm text-gray-600 font-medium flex items-center gap-2">
                     <Loader2 className="w-4 h-4 animate-spin" />
                     Searching...
+                  </div>
+                ) : errorDestination ? (
+                  <div className="p-4 text-sm text-red-600 font-medium">
+                    {errorDestination.message}
                   </div>
                 ) : destinationAirports.length > 0 ? (
                   destinationAirports.map((airport) => (
