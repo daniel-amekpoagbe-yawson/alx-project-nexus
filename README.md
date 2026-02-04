@@ -538,7 +538,7 @@ in the Software without restriction...
 ```
 
 ---
-
+```
 ## 🙏 Acknowledgments
 
 ### People
